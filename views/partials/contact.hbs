@@ -1,0 +1,42 @@
+<!-- Container (Contact Section) -->
+<div  id="contact" class="container-fluid">
+    <div class="col-md-4 col-md-offset-4 col-sm-4" >
+        <h3 class="text-center span-title" >
+            <span style="color: green ;border-bottom: 3px solid orange">
+                ĐÁNH GIÁ TỪ KHÁCH HÀNG
+            </span>
+        </h3>
+        <p class="text-center span-title-1"><em>Chúng tôi yêu các bạn!</em></p>
+    </div>
+
+    <div class="container" >
+        <div class="row">
+        <div class="col-sm-3 col-sm-offset-3 form-group">
+            <input class="form-control" id="name" name="name" placeholder="Họ và tên" type="text" required>
+        </div>
+        <div class="col-sm-3 form-group">
+            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+        <div class="col-sm-6 col-sm-offset-3 form-group">
+            <textarea class="form-control" id="comments" name="comments" placeholder="Nội dung" rows="5"></textarea>
+            <div class="col-md-12 form-group" style="margin-top: 10px;">
+                <button id="btnsend" class="btn pull-right" type="submit">Send</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<!--<script type="text/javascript">-->
+<!--    document.getElementById("btn-send").addEventListener("click",check)-->
+<!--    function check()-->
+<!--    {-->
+<!--        alert("Vui lòng điền đầy đủ thông tin");-->
+<!--    }-->
+<!--</script>-->
+<script>
+    $(document).ready(function () {
+        $("#btnsend").click(function () {
+            alert("aaaaa");
+        });
+    })
+</script>

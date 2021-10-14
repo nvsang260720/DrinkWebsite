@@ -1,0 +1,25 @@
+
+/* Các CSS này dành cho toàn bộ website và desktop */
+body {
+    background: #fff;
+    color: #333;
+}
+
+/* Dành cho điện thoại */
+@media all and (max-width: 480px) {
+
+}
+
+/* Dành cho máy tính bảng */
+@media all and (max-width: 1024px) {
+
+}
+.brand {
+    color: #1c6816;
+    font-size: 40px;
+    font-family: 'Pacifico', cursive;
+}
+.container h4  {
+    font-family: "Times New Roman", Times, serif;
+    color: #848484;
+}

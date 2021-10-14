@@ -1,0 +1,177 @@
+
+.section_heading {
+     float: left;
+     font-weight: 700;
+     position: relative;
+     margin-bottom: 30px;
+     margin-top: 0;
+     font-size: 32px;
+     font-family: 'Google Sans','Noto Sans Myanmar UI','arial',sans-serif;
+ }
+.flex_wrap {
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.display_flex{ display: -ms-flexbox; display: -webkit-flex; display: flex;}
+.line_after_heading:after{
+    content: ''; height: 4px; background: #191919;
+    width: 50%; display: block; }
+/* Collection */
+.collection_menu_wrap{
+    padding-top: 50px;
+}
+
+.sticky-Sidebar{
+    top: 70px;
+    position: sticky;
+    left: 0;
+}
+.sidebar_menu{ background: white; }
+
+.sidebar_menu ul{ padding: 0; margin: 0; }
+
+.sidebar_menu ul li{ padding: 12px 30px; list-style-type: none;}
+
+.sidebar_menu ul li a {
+    font-size: 16px;
+
+    color:black;
+    font-family: 'Google Sans', 'Noto Sans Myanmar UI', 'arial', sans-serif;
+}
+.sidebar_menu ul li a:hover{text-decoration: none;color: green; border-bottom:2px solid orange ;}
+.block_menu_item .block_menu_item_title {
+    color: green; margin: 0;
+    padding-bottom: 10px;
+    position: relative;
+    right: -20px;
+}
+.block_menu_item .block_menu_item_title span{ float: none; display: inline-block;}
+.block_menu_item .block_menu_item_title span:after{ background: orange; }
+/* End Collection */
+.menu_lists { margin-left: -5px; margin-right: -5px; }
+
+.menu_item{
+    /*background: #fff;*/
+    flex: 0 0 calc(33.333% - 30px);
+    margin: 0 15px 30px;
+    min-height: 145px;
+    overflow: hidden;
+}
+
+/* moder add*/
+.quantity input {
+    -webkit-appearance: none;
+    border: none;
+    text-align: center;
+    width: 18px;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+}
+
+.quantity button[class*=btn] {
+    width: 30px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+.minus-btn img {
+    margin-bottom: 3px;
+}
+.plus-btn img {
+    margin-top: 2px;
+}
+.spanquantity-span {
+    font-size: 18px;
+}
+/* Dành cho điện thoại */
+@media all and (min-width: 320px) {
+    body {
+        background: #e7e7e7;
+        color: #333333;
+    }
+    .span-title-1 {
+        font-size: 9px;
+        font-family: 'Google Sans','Noto Sans Myanmar UI','arial',sans-serif;
+    }
+    .btn1 {
+        display: inline-block;
+        margin-bottom: 0;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid transparent;
+        padding: 2px 2px;
+        font-size: 9px;
+        line-height: 1.42857143;
+        border-radius: 4px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .sidebar_menu ul li{ padding: 8px 8px; list-style-type: none;}
+
+    .sidebar_menu ul li a {
+        font-size: 16px;
+        font-weight: 700;
+        color: #000;
+        font-family: 'Google Sans', 'Noto Sans Myanmar UI', 'arial', sans-serif;
+    }
+    .span-title {
+        font-size: 15px;
+        font-family: 'Google Sans','Noto Sans Myanmar UI','arial',sans-serif;
+        border-bottom: 3px solid orange;
+        color:green;
+    }
+    .img-responsive {
+        width: 100px;
+    }
+}
+@media all and (min-width: 1400px) {
+    body {
+        background: #e7e7e7;
+        color: #333333;
+    }
+    .btn1 {
+        display: inline-block;
+        margin-bottom: 0;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid transparent;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        border-radius: 4px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .span-title-1 {
+        font-size: 20px;
+        font-family: 'Google Sans','Noto Sans Myanmar UI','arial',sans-serif;
+    }
+    .span-title {
+        font-size: 24px;
+        font-family: 'Google Sans','Noto Sans Myanmar UI','arial',sans-serif;
+        border-bottom: 3px solid orange;
+        color:green;
+        padding: 10px;
+    }
+}

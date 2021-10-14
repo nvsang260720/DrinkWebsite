@@ -1,0 +1,186 @@
+{{>header}}
+{{# each info}}
+    {{#each this }}
+        <div id="product">
+            <!-- Breadcrumb -->
+            <div id="breadcrumb">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 " >
+                            <ol class="breadcrumb breadcrumb-arrow" itemscope itemtype="http://schema.org/BreadcrumbList">
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a href="/home/menu" target="_self">
+                                    <span itemprop="name">Menu</span></a>
+                                    <meta itemprop="position" content="1" />
+                                </li>
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a href="/home/menu/" target="_self" itemprop="item">
+                                        <span itemprop="name">{{this.type}}</span>
+                                    </a>
+                                    <meta itemprop="position" content="2" />
+                                </li>
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="active">
+                                    <span itemprop="name">{{this.title}}</span>
+                                    <meta itemprop="position" content="2" />
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Breadcrumb -->
+            <div class="product-info">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="product_info_wrap flex_wrap display_flex">
+                                <div id="img_product">
+                                    <img class="product_featured_image" src="{{this.imgpath}}" alt="{{this.title}}"/>
+                                </div>
+                                <div class="info_product display_flex align-items-center">
+                                    <div class="info_product_wrap">
+                                        <p class="info_product_title ">
+                                            <span class="span-title" style="border-bottom: 3px solid orange;">
+                                                {{this.title}}
+                                            </span>
+                                            <div class="product_address" style="padding-top: 10px;">
+                                                <h4 style="font-size: 17px">{{this.address}}
+                                                    <span style="color: red;"><i class="fas fa-map-marker-alt"></i></span>
+                                                </h4>
+
+                                            </div>
+                                            <div class="product_voted row" style="border-top: 2px solid green; border-bottom: 2px solid green;">
+                                                <div class="voted col-md-2">
+                                                    <span class="button button5" style="position: relative;top: 10px;">{{this.voted}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <span class="span-number">7.5</span>
+                                                    <span class="span-comment">Chất lượng</span>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <span class="span-number">6.0</span>
+                                                    <span class="span-comment">Phục vụ</span>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <span class="span-number">8.0</span>
+                                                    <span class="span-comment">Gía cả</span>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <span class="span-title-1" style="font-size: 15px"><a href=""><span>{{this.commen}}</span> bình luận.</a></span>
+                                                </div>
+                                            </div>
+                                            <div class="time_open">
+                                               <h4> Giờ mở cửa: {{this.time_open}} hằng ngày</h4>
+                                            </div>
+                                        </p>
+                                        <div class="info_product_short_des">
+                                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                                <!-- Indicators -->
+                                                <ol class="carousel-indicators">
+                                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                                </ol>
+
+                                                <!-- Wrapper for slides -->
+                                                <div class="carousel-inner">
+                                                    <span></span>
+                                                    <div class="item active">
+                                                        <p class="text-center">
+                                                            <img class="img-thumbnail" src="{{this.imgpath_1}}" style="width: 200px; height: 200px;">
+                                                        </p>
+                                                    </div>
+                                                    <div class="item">
+                                                        <p class="text-center">
+                                                            <img class="img-thumbnail" src="{{imgpath_2}}" style="width: 200px; height: 200px;" >
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <!-- Left and right controls -->
+                                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </div>
+                                            <p style="text-align: justify;">
+                                               <span class="span-title-1">
+                                                   {{this.description}}
+                                               </span>
+                                            </p>
+                                        </div>
+                                        <form id="add_item_form" action="/cart/add" method="post" class="variants clearfix">
+                                            <div class="select clearfix" style="display:none">
+                                                <select id="product-select" name="id" style="display:none">
+                                                    <option value="{{this._id}}">Default Title - {{this.price}} đ</option>
+                                                </select>
+                                                <input type="hidden" value="" id="inventory_qty" />
+                                            </div>
+                                            <div class="product_price">
+                                                Giá :{{this.price}} vnđ
+                                            </div>
+                                            <div class="btn_action">
+                                                <a href="/home/checkout" target="_blank" title="Mua ngay">
+                                                    MUA NGAY
+                                                </a>
+                                            </div>
+                                            <p class="delivery_hotline">
+                                                Gọi giao hàng tận nơi
+                                                <a href="tel:18006936" title="Hotline: 1800 6936">
+                                                    1800 6936
+                                                </a>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--    product description-->
+            <div class="product_description"><div class="block_des block_des_1" style="text-align: center;" data-mce-style="text-align: center;"><div class="block_container"><h3>Cái nhấp môi ngọt ngào</h3><p><br>Mỗi cái nhấp môi vào li Caramel Macchiato sẽ đem đến một sự ngạc nhiên thú vị, vì nhiều hương vị được gói gọn trong một li Caramel Macchiato: <span style="color: rgb(234, 128, 37);" data-mce-style="color: #ea8025;"><em><strong>vị thơm béo của bọt sữa và sữa tươi, vị đắng thanh thoát của cà phê Espresso hảo hạng, và vị ngọt đậm của sốt caramel</strong></em></span>.</p></div></div></div>
+    {{/each}}
+{{/each}}
+
+<div class="container">
+    <div id="product-related">
+        <div class="container_flex">
+            <div class="row_flex">
+                <h3 class="related_product_title">Có thể bạn thích</h3>
+                <div class="row">
+                {{# each relate}}
+                    {{#each this}}
+                            <div class="col-sm-6 col-md-3">
+                                <div class="thumbnail">
+                                    <img class="img-responsive img-rounded" src="{{this.imgpath}}" alt="{{this.title}}">
+                                    <div class="caption">
+                                        <h4 class="text-center">
+                                            <a style="text-decoration: none;color: #000;" href="/home/info-product/{{this._id}}" id="product_name"> {{this.title}}</a>
+                                        </h4>
+                                    </div>
+                                    <div class="caption">
+                                        <p style="font-size: 20px ; font-weight: bold ;text-align: center ;font-family: 'Anton', sans-serif; ">
+                                            {{this.price}} - VNĐ
+                                        </p>
+                                        <p style="text-align:center; margin-bottom: 10px ;">
+                                            <a href="#" class="btn btn-success" role="button">MUA NGAY</a>
+                                            <a href="#" class="btn btn-warning" role="button"><i class="glyphicon glyphicon-shopping-cart"></i></a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                    {{/each}}
+                {{/each}}
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+{{>footer}}

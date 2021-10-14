@@ -1,0 +1,74 @@
+<body style="
+    background: #fff;
+    color: #333;
+    font-size: 10px;">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+            <div id="success" class="alert alert-success" {{#if noMessages}}hidden{{/if}}>
+                {{ successMsg }}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--small-menu-->
+<div class="menu-title container" >
+    <div class="col-md-12 col-sm-12" style="padding-bottom: 10px">
+            <h3 class="span-title " >
+                <span style="border-bottom: 3px solid orange;color:green;">
+                    BÁN CHẠY NHẤT
+                </span>
+                <span class="span-title text-right">
+                    <a style="float: right" href="/home/menu">
+                        <span class=" btn btn-success">
+                                  XEM THÊM
+                        </span>
+                    </a>
+                </span>
+            </h3>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        {{# each products }}
+            <div class="row">
+                <form action="/home">
+                    {{# each this}}
+                        <div class="col-sm-3 col-md-3 col-xs-6">
+                            <div class="thumbnail">
+                                <img class="img-responsive img-rounded" src="{{this.imgpath}}" alt="{{this.title}}">
+                                <div class="caption">
+                                    <h4  class="text-center span-title">
+                                        <a  href="/home/info-product/{{this._id}}" id="product_name">
+                                           <span class="span-title-1">
+                                               {{this.title}}
+                                           </span>
+                                        </a>
+                                    </h4>
+                                    <p class="text-center">
+                                       <span class="span-title-1">
+                                           {{this.price}} - VNĐ
+                                       </span>
+                                    </p>
+                                </div>
+                                <div class="caption">
+                                    <div class="capption_address text-center">
+                                        <span class="span-title-2">
+                                            {{this.address}}
+                                        </span>&nbsp;
+                                        <span style="color: red;"><i class="fas fa-map-marker-alt"></i></span>
+                                    </div>
+                                    <p style="text-align:center; padding-top: 10px;">
+                                        <a href="/home/checkout" class="btn1 btn-success" role="button">MUA NGAY</a>
+                                        <a href="/home/add-to-cart/{{this._id}}" class="btn1 btn-warning" role="button"><i class="glyphicon glyphicon-shopping-cart"></i></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </form>
+            </div>
+        {{/each}}
+    </div>
+</div>
+</body>
